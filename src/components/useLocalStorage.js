@@ -3,12 +3,13 @@ import { useState } from "react";
 
 const useLocalStorage = (stateVar, value) => {
   const [val, setValue] = useState(value);
-  newStorage(stateVar, val);
+  localStorage.setItem(stateVar, value);
   return [val, setValue];
 };
-const newStorage = (key, value) => {
-  localStorage.setItem(key, value);
-};
+// const newStorage = (key, value) => {
+
+// };
 
 export default useLocalStorage;
+
 
